@@ -7,9 +7,7 @@ r = math.sqrt(x**2 + y**2)
 
 if x>=0:
     p = math.atan(y/x)
-elif y>=0:
-    p = math.pi + math.atan(y/x)
-elif y<0:
+else:
     p = math.pi + math.atan(y/x)
 
 if p<0:
