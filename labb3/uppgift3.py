@@ -1,8 +1,8 @@
 import numpy as np
 
 def stdev(arr):
-    arr = np.array(arr)
-    return np.sqrt(np.sum((arr-np.mean(arr))**2)/np.size(arr))
+    arr, m = np.array(arr), np.mean(arr)
+    return np.sqrt(np.sum((arr-m)**2)/np.size(arr))
 
 
 data = [4.7,5.8,4.6,6.2,5.1,6.4,5.7,4.9,6.2,5.7,6.4,5.1,5.1,5.3,
