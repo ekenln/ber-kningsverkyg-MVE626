@@ -11,8 +11,8 @@ def maxmin(expr, x, start, end):
     # Gör en checklista med tal som ska kollas om de ger minst/störst värde i funktionen
     check_list = [start, end]
 
-    # Lägger till stationära punkter i checklistan
-    check_list.extend(list(sp.solveset(expr.diff(), x, domain=sp.S.Reals)))
+    # Lägger till stationära punkter i checklistan. Sätter domänen till intervallet mellan start och end för att funktionen inte ska krascha med funktioner som har oändligt många stationära punkter
+    check_list.extend(list(sp.solveset(expr.diff(), x, domain=sp.Interval(start, end))))
     
     # Går igenom checklistan och redigerar ymin och ymax därefter. Lägger till värden i xmin0 och xmax0 för att gå igenom senare
     for i in check_list: 
@@ -48,9 +48,8 @@ print(maxmin(f, x, 0, 1))
 f = x**2*(1-x)**2
 print(maxmin(f, x, 0, 1))
 
-# Funktionen misslyckas med nedanstående funktion
-# f = 3*sp.pi*x + 6*sp.sin(sp.pi*x)
-# print(maxmin(f, x, 0, 1))
+f = 3*sp.pi*x + 6*sp.sin(sp.pi*x)
+print(maxmin(f, x, 0, 1))
 
 f = (x+2)/(x+1)
 print(maxmin(f, x, 0, 1))
