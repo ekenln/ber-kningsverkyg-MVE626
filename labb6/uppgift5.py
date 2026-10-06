@@ -9,10 +9,10 @@ def largest_power_with_limit_at_zero(f, x):
 		return sp.nan
 	while (limes == 0): #fortsätt så länge gränsvärdet ger 0, f är fortfarande mindre än x^a, kan testa högre a
 		a = a + 1
-		if a >= 100: #om de fortfarande är 0 efter 100 gånger antar vi att f går mot 0 snabbare än alla potenser
-			return sp.oo	
+		if a >= 100: #efter 100 gånger så 
+			return sp.oo
 		limes = sp.limit(f/x**a, x, 0)
-		if sp.Abs(limes) == sp.oo: #om vi får att det går mot oändligheten ser vi att a är för stort. Förra a var största godkända 
+		if sp.Abs(limes) == sp.oo: #om vi får att det hoppar så det går direkt till oändligheten ser vi att a är för stort. Förra a var största godkända 
 			return a-1
 	return a #limes nollskilt men inte heller går mot oändligheten (ändligt) -> bryter ur while loopen och returnerar a
 
