@@ -5,7 +5,7 @@ x = sp.symbols('x') # Definierar variabeln x
 f1 = ((3*x+4)/(4*x+3))**x
 print(sp.limit(f1, x, sp.oo))
 
-f2 = (1+3*x)**(1/8*x)
+f2 = (1+3*x)**(1/(8*x))
 print(sp.limit(f2, x, 0))
 
 f3 = (x - sp.sin(x))/(x-sp.tan(x))
@@ -37,7 +37,7 @@ f10 = sp.sin(2*x)
 print(f10.series(x, sp.pi, 6))
 
 f11 = sp.sin(x)**2
-print(f11.series(x, sp.pi*-0.5, 6))
+print(f11.series(x, sp.pi*sp.Rational(-1,2), 6))
 
 f12 = (x+1)/(x**2)
 print(f12.series(x, -2, 6))

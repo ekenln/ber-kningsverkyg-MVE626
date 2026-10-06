@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 
 def draw_pi(n):
-	print(sp.pi.evalf(n))
+	# print(sp.pi.evalf(n))
 	pi_n = sp.pi.evalf(n+3) #extra decimaler för att få rätt avrundning vid n
 
 	#gör om till sträng för att kunna iterera lättare o se varje decimal
@@ -17,10 +17,11 @@ def draw_pi(n):
 
 	#plotta utifrån dictionary count
 	plt.bar(count.keys(), count.values(), color='blue') 
-	plt.title('förekommande av nummer')
+	plt.title('Förekomst av siffror i Pi')
 	plt.show()
 
-draw_pi(100)
+for i in [10, 100, 1000, 10000, 100000]:
+	draw_pi(i)
 
 
 
