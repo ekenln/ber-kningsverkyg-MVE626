@@ -1,6 +1,7 @@
 import sympy as sp
-x = sp.symbols('x')
+x = sp.symbols('x') # Definierar variabeln x
 
+# Beräknar gränsvärde för f1 - f4
 f1 = ((3*x+4)/(4*x+3))**x
 print(sp.limit(f1, x, sp.oo))
 
@@ -13,6 +14,8 @@ print(sp.limit(f3, x, 0))
 f4 = (sp.sin(x**sp.pi)**2)/(1-sp.cos(2*x**sp.pi))
 print(sp.limit(f4.subs(x**sp.pi, x), x, 0))
 
+# Beräknar derivata och förenklar funktionerna f5 - f8
+
 f5 = sp.exp(3*x)/x
 print(sp.simplify(sp.diff(f5)))
 
@@ -24,6 +27,8 @@ print(sp.simplify(sp.diff(f7)))
 
 f8 = sp.cos(2*x) - sp.sin(x)**2
 print(sp.simplify(sp.diff(f8)))
+
+# Beräknar taylorserie för f9 - f11
 
 f9 = sp.exp(-3*x)
 print(f9.series(x, 1, 6))
