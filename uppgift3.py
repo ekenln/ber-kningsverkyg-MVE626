@@ -37,7 +37,7 @@ def f(x):
         return np.sin(x)/x
 
 for i in range(7):
-    print(f'N = 10^{i}: {trapetsmetoden(f, 0, 0, 10**i)} - 1.8519370519824662 = {trapetsmetoden(f, 0, np.pi, 10**i)-1.8519370519824662}')
+    print(f'N = 10^{i}: {trapetsmetoden(f, 0, np.pi, 10**i)} - 1.8519370519824662 = {trapetsmetoden(f, 0, np.pi, 10**i)-1.8519370519824662}')
 
 # Liknande går inte att göra för f = 1/x eftersom det första värdet i trapetsen är oändligt stort.
 
