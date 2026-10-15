@@ -1,12 +1,11 @@
 from scipy import optimize
 import sympy as sp
-import numpy as np
+from numpy import linspace
 
 x = sp.symbols('x')
 
 def allroots(f, a, b, N = 100):
-	intervals = np.linspace(a, b, N)
-	# print(intervals)
+	intervals = linspace(a, b, N)
 
 	f_lam = sp.lambdify(x, f)
 	x_prev = 0
